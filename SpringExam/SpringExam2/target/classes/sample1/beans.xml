@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="messageBean" class="sample1.MessageBeanImpl" scope="prototype">
+	<constructor-arg>
+		<value>strawberry</value>
+	</constructor-arg>
+	<!-- constructor-arg:  -->	
+	<property name="cost">
+		<value>3000</value>
+	</property>
+	<!-- property: set코스트한후 3000을 전달해라 -->
+</bean>	
+</beans>
+
+
+
+
+
+

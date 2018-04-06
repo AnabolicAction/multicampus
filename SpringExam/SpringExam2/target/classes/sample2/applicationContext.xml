@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="foo0" class="sample2.Foo" scope="prototype"/> <!-- prototyp/sigleton(default) -->
+<!--  여청시마다 객체생성 다시해줘`-->
+<bean id="foo1" class="sample2.Foo">
+	<constructor-arg value="테스트"/>	
+</bean>
+
+<!--첫번째 아규먼트 :가나다,두번쨰아규먼트:100  -->
+<bean id="foo2" class="sample2.Foo">
+	<constructor-arg index="0" value="가나다"/>
+	<constructor-arg index="1" value="100"/>
+</bean>
+
+<bean id="foo3" class="sample2.Foo">
+	<constructor-arg index="1"  type="int"              value="50"/>
+	<constructor-arg index="0"  type="java.lang.String" value="xyz"/>
+	<constructor-arg index="2"  type="boolean"          value="true"/>
+</bean>
+<!-- bar라는 객체를 전달할것이다, ref를 씀 -->
+<bean id="foo4" class="sample2.Foo">
+	<constructor-arg ref="bar" />
+</bean>
+
+<bean id="bar"  class="sample2.Bar" />
+	
+</beans>
+
+
+
+
+
+
+
+
